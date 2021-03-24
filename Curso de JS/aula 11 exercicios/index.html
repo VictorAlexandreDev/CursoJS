@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Exercicio aula 11</title>
+      <style>
+            *{
+                  padding: 0;
+                  margin: 0;
+                  box-sizing: border-box;
+                  font-family: 'open sans';
+            }
+            body{
+                  background-color: cornflowerblue;
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                  align-items: center;
+            }
+            div.calc,div.calc2{
+                  border: 2px solid slateblue;
+                  border-radius: 10px;
+                  padding: 20px;
+                  display: inline-block;
+                  text-align: center;
+                  width: 500px;
+                  margin: 50px 0;
+            }
+            h1{
+                  text-transform: uppercase;
+            }
+            input[type=number]{
+                  border: 0;
+                  height: 30px;
+                  width: 100px;
+                  border-radius: 10px;
+                  outline: none;
+                  padding-left: 5px;
+                  font-weight: bold;
+                  font-size: 15pt;
+                  margin: 0 auto;
+                  line-height: 50%;
+            }
+            div.input{
+                  margin: 0 auto;
+                  display: flex;
+                  padding: 20px;
+            }
+            input[type=button]{
+                  height: 40px;
+                  border: 0;
+                  outline: 0;
+                  border-radius: 10px;
+                  font-size: 15pt;
+                  width: 150px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  cursor: pointer;
+            }
+            input[type=button]:hover{
+                  background-color: silver;
+            }
+            div.res,div.res2{
+                  font-weight: bold;
+                  padding: 10px;
+                  font-size: 22px;
+            }
+      </style>
+</head>
+<body>
+      <div class="calc">
+            <h1>some seus calculos aqui</h1>
+            <div class="input">
+                  <input type="number" name="n1" id="n1">+<input type="number" name="n2" id="n2">
+            </div><!--input-->
+            <input type="button" value="Somar" onclick="somar()">
+            <div class="res">Resultado</div><!--res-->
+      </div><!--calc-->
+
+      <div class="calc2">
+            <h1>subtraia seus calculos aqui</h1>
+            <div class="input">
+                  <input type="number" name="n5" id="n5">-<input type="number" name="n6" id="n6">
+            </div><!--input-->
+            <input type="button" value="Subtrair" onclick="sub()">
+            <div class="res2">Resultado</div><!--res-->
+      </div><!--calc-->
+
+      <script>
+            //esta function faz contas de soma
+            function somar(){
+                  var res = window.document.querySelector('div.res')
+                  var n1 = window.document.getElementById('n1')
+                  var n2 = window.document.getElementById('n2')
+                  var valor1 = Number(n1.value)
+                  var valor2 = Number(n2.value)
+                  var soma = valor1 + valor2
+                  res.innerHTML = `A soma entre ${valor1} e ${valor2} é = ${soma}`
+            }
+            //esta function faz contas de subtração
+            function sub(){
+                  var res2 = window.document.querySelector('div.res2')
+                  var n5 = window.document.getElementById('n5')
+                  var n6 = window.document.getElementById('n6')
+                  var valor3 = Number(n5.value)
+                  var valor4 = Number(n6.value)
+                  var soma = valor3 - valor4
+                  res2.innerHTML = `A subtração entre ${valor3} e ${valor4} é = ${soma}`
+            }
+      </script> 
+</body>
+</html>
